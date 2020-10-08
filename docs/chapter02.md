@@ -9,12 +9,14 @@
 
 按照我们以前做消元法的思路：
 
-* 第一步，我们希望在第二个方程中消去$x$项，来操作系数矩阵$A=\begin{bmatrix}\underline{1}&2&1\\3&8&1\\0&4&1\end{bmatrix}$，下划线的元素为第一步的主元（pivot）：$\begin{bmatrix}\underline{1}&2&1\\3&8&1\\0&4&1\end{bmatrix}\xrightarrow{row_2-3row_1}\begin{bmatrix}\underline{1}&2&1\\0&2&-2\\0&4&1\end{bmatrix}$
+* 第一步，我们希望在第二个方程中消去$x$项，来操作系数矩阵$A=\begin{bmatrix}\underline{1}&2&1\\3&8&1\\0&4&1\end{bmatrix}$，下划线的元素为第一步的**主元（pivot）**：$\begin{bmatrix}\underline{1}&2&1\\3&8&1\\0&4&1\end{bmatrix}\xrightarrow{row_2-3row_1}\begin{bmatrix}\underline{1}&2&1\\0&2&-2\\0&4&1\end{bmatrix}$
 
     这里我们先不管$b$向量，等做完$A$的消元可以再做$b$的消元。（这是MATLAB等工具经常使用的算法。）
 * 第二步，我们希望在第三个方程中消去$y$项，现在第二行第一个非零元素成为了第二个主元：$\begin{bmatrix}\underline{1}&2&1\\0&\underline{2}&-2\\0&4&1\end{bmatrix}\xrightarrow{row_3-2row_2}\begin{bmatrix}\underline{1}&2&1\\0&\underline{2}&-2\\0&0&\underline{5}\end{bmatrix}$
     
     注意到第三行消元过后仅剩一个非零元素，所以它就成为第三个主元。做到这里就算消元完成了。
+
+> We started with an invertible matrix $A$ and ended with an upper triangular matrix $U$; the lower left portion of $U$ is filled with zeros. Pivots 1, 2, 5 are on the diagonal of $U$.
 
 再来讨论一下消元失效的情形：首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零；最后提一下，如果我们把第三个方程$z$前的系数成$-4$，会导致第二步消元时最后一行全部为零，则第三个主元就不存在了，至此消元不能继续进行了，这就是下一讲中涉及的不可逆情况。
 
@@ -23,6 +25,7 @@
     不难看出，$z$的解已经出现了，此时方程组变为$\begin{cases}x&+2y&+z&=2\\&2y&-2z&=6\\&&5z&=-10\end{cases}$，从第三个方程求出$z=-2$，代入第二个方程求出$y=1$，在代入第一个方程求出$x=2$。
 
 ## 消元矩阵
+> Elimination Matrices
 
 上一讲我们学习了矩阵乘以向量的方法，有三个列向量的矩阵乘以另一个向量，按列的线性组合可以写作$\Bigg[v_1\ v_2\ v_3\Bigg]\begin{bmatrix}3\\4\\5\end{bmatrix}=3v_1+4v_2+5v_3$。
 

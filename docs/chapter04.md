@@ -1,23 +1,34 @@
 
 # 第四讲：$A$ 的 $LU$ 分解
 
-$AB$的逆矩阵：
+$AB$的逆矩阵是$B^{-1}A^{-1}$
 $$
 \begin{aligned}
 A \cdot A^{-1} = I & = A^{-1} \cdot A\\
-(AB) \cdot (B^{-1}A^{-1}) & = I\\
-\textrm{则} AB \textrm{的逆矩阵为} & B^{-1}A^{-1}
+(AB) \cdot (B^{-1}A^{-1}) & = I
 \end{aligned}
 $$
+$$
+(AB)^{-1}=B^{-1}A^{-1}
+$$
 
-$A^{T}$的逆矩阵：
+$AB$ 的倒置是$B^TA^T$.
+$$
+(AB)^T = B^TA^T
+$$
+
+$A^{T}$的逆矩阵是$(A^{-1})^T$.
 $$
 \begin{aligned}
 (A \cdot A^{-1})^{T} & = I^{T}\\
 (A^{-1})^{T} \cdot A^{T} & = I\\
-\textrm{则} A^{T} \textrm{的逆矩阵为} & (A^{-1})^{T}
 \end{aligned}
 $$
+
+$$
+(A^T)^{-1} = (A^{-1})^T
+$$
+
 
 ## 将一个 $n$ 阶方阵 $A$ 变换为 $LU$ 需要的计算量估计：
 

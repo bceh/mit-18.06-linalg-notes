@@ -3,13 +3,22 @@
 
 对于$m \times n$矩阵$A$，$rank(A)=r$有：
 
-* 行空间$C(A^T) \in \mathbb{R}^n, dim C(A^T)=r$，基见例1。
+* 列空间 $C(A) \in \mathbb{R}^m, \text{dim } C(A)=r$。
 
-* 零空间$N(A) \in \mathbb{R}^n, dim N(A)=n-r$，自由元所在的列即可组成零空间的一组基。
+    > The **column space**, $C(A)$, consists of all combinations of the columns of $A$ and is a vector space in $\R^m$.
 
-* 列空间$C(A) \in \mathbb{R}^m, dim C(A)=r$，主元所在的列即可组成列空间的一组基。
+* 零空间 $N(A) \in \mathbb{R}^n, \text{dim } N(A)=n-r$。
 
-* 左零空间$N(A^T) \in \mathbb{R}^m, dim N(A^T)=m-r$，基见例2。
+    > The **nullspace**, $N(A)$ consists of all solutions $x$ of the equation $Ax = 0$ and lies in $\R^n$.
+
+* 行空间 $C(A^T) \in \R^n, \text{dim } C(A^T)=r$。
+
+    > The **Row space**, $C(A^T)$, is the combinations of the row vectors of $A$ form a subspace of $\R^n$. We equate this with $C(A^T)$, the column space of the transpose of $A$.
+
+* 左零空间 $N(A^T) \in \mathbb{R}^m, \text{dim } N(A^T)=m-r$，
+    
+    > the nullspace of $A^T$ the **left nullspace** of $A$. This is a subspace of $\R^m$
+
 
 例1，对于行空间
 $
@@ -89,26 +98,37 @@ $$
 
 很明显，式中$E$的最后一行对$A$的行做线性组合后，得到$R$的最后一行，即$0$向量，也就是$y^TA=0^T$。
 
-最后，引入矩阵空间的概念，矩阵可以同向量一样，做求和、数乘。
+## A new vector space (M)
+> The collection of all $3 × 3$ matrices forms a vector space; call it $M$.
 
-举例，设所有$3 \times 3$矩阵组成的矩阵空间为$M$。则上三角矩阵、对称矩阵、对角矩阵（前两者的交集）。
+We can add matrices and multiply them by scalars and there’s a zero matrix (additive identity). If we ignore the fact that we can multiply matrices by each other, they behave just like vectors.
 
-观察一下对角矩阵，如果取
-$
+Some subspaces of $M$ include:
+
+* all upper triangular matrices (上三角矩阵)
+* all symmetric matrices （对称矩阵）
+* D, all diagonal matrices （对角矩阵）
+
+D is the *intersection* of the first two spaces. Its dimension is 3; one basis for D is:
+
+
+$$
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 0 & 0 \\
 0 & 0 & 0 \\
-\end{bmatrix} \quad
+\end{bmatrix}, \quad
+
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 3 & 0 \\
 0 & 0 & 0 \\
-\end{bmatrix} \quad
+\end{bmatrix}, \quad
+
 \begin{bmatrix}
 0 & 0 & 0 \\
 0 & 0 & 0 \\
 0 & 0 & 7 \\
 \end{bmatrix}
-$
-，可以发现，任何三阶对角矩阵均可用这三个矩阵的线性组合生成，因此，他们生成了三阶对角矩阵空间，即这三个矩阵是三阶对角矩阵空间的一组基。
+$$
+

@@ -35,20 +35,24 @@ $$
 
 讨论$b$满足什么条件才能让方程$Ax=b$有解（solvability condition on b）：当且仅当$b$属于$A$的列空间时。另一种描述：如果$A$的各行线性组合得到$0$行，则$b$端分量做同样的线性组合，结果也为$0$时，方程才有解。
 
-解法：令所有自由变量取$0$，则有$
-\Big\lbrace
-\begin{eqnarray*}
+解法：令所有自由变量取$0$，则有
+
+$$
+\left\{
+\begin{aligned}
 x_1 & + & 2x_3 & = & 1 \\
-    &   & 2x_3 & = & 3 \\
-\end{eqnarray*}
-$
+    &   & 2x_3 & = & 3 
+\end{aligned}
+\right.
+$$
+
 ，解得
 $
 \Big\lbrace
-\begin{eqnarray*}
+\begin{aligned}
 x_1 & = & -2 \\
 x_3 & = & \frac{3}{2} \\
-\end{eqnarray*}
+\end{aligned}
 $
 ，代入$Ax=b$求得特解
 $
@@ -62,10 +66,10 @@ $。
 
 $$
 \Big\lbrace
-\begin{eqnarray}
+\begin{aligned}
 A & x_p & = & b \\
 A & x_n & = & 0 \\
-\end{eqnarray}
+\end{aligned}
 \quad
 \underrightarrow{两式相加}
 \quad
