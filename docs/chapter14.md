@@ -1,9 +1,11 @@
 
 # 第十四讲：正交向量与子空间
 
-在四个基本子空间中，提到对于秩为r的$m \times n$矩阵，其行空间（$dim C(A^T)=r$）与零空间（$dim N(A)=n-r$）同属于$\mathbb{R}^n$空间，其列空间（$dim C(A)=r$）与左零空间（$dim N(A^T)$=m-r）同属于$\mathbb{R}^m$空间。
+在四个基本子空间中，提到对于秩为$r$的$m \times n$矩阵，其行空间（$\text{dim }C(A^T)=r$）与零空间（$\text{dim } N(A)=n-r$）同属于$\R^n$空间，其列空间（$\text{dim } C(A)=r$）与左零空间（$\text{dim } N(A^T)=m-r$）同属于$\R^m$空间。
 
-对于向量$x, y$，当$x^T \cdot y=0$即$x_1y_1+x_2y_x+\cdots+x_ny_n=0$时，有向量$x, y$正交（vector orthogonal）。
+> 于向量$x, y$，当$x^T \cdot y=0$即$x_1y_1+x_2y_x+\cdots+x_ny_n=0$时，有向量$x, y$正交（vector orthogonal）。
+> 
+> all vectors are orthogonal to the zero vector ($\vec 0$).
 
 毕达哥拉斯定理（Pythagorean theorem）中提到，直角三角形的三条边满足：
 
@@ -23,7 +25,9 @@ $$
 举个例子：
 $x=\begin{bmatrix}1\\2\\3\end{bmatrix}, y=\begin{bmatrix}2\\-1\\0\end{bmatrix}, x+y=\begin{bmatrix}3\\1\\3\end{bmatrix}$，有$\left\| \overrightarrow{x} \right\|^2=14, \left\| \overrightarrow{y} \right\|^2=5, \left\| \overrightarrow{x+y} \right\|^2=19$，而$x^Ty=1\times2+2\times (-1)+3\times0=0$。
 
-向量$S$与向量$T$正交，则意味着$S$中的每一个向量都与$T$中的每一个向量正交。若两个子空间正交，则它们一定不会相交于某个非零向量。
+> 子空间$S$与子空间$T$正交，则意味着$S$中的每一个向量都与$T$中的每一个向量正交。若两个子空间正交，则它们一定不会相交于某个非零向量。
+
+## Nullspace is perpendicular to row space
 
 现在观察行空间与零空间，零空间是$Ax=0$的解，即$x$若在零空间，则$Ax$为零向量；
 
@@ -42,14 +46,15 @@ $$
 所以这个等式告诉我们，$x$同$A$中的所有行正交；
 
 接下来还验证$x$是否与$A$中各行的线性组合正交，
-$
+$$
 \begin{cases}
 c_1(row_1)^Tx=0 \\
 c_2(row_2)^Tx=0 \\
 \vdots \\
 c_n(row_m)^Tx=0 \\
 \end{cases}
-$，各式相加得$(c_1row_1+c_2row_2+\cdots+c_nrow_m)^Tx=0$，得证。
+$$
+,各式相加得$(c_1row_1+c_2row_2+\cdots+c_nrow_m)^Tx=0$,得证。
 
 我们可以说，行空间与零空间将$\mathbb{R}^n$分割为两个正交的子空间，同样的，列空间与左零空间将$\mathbb{R}^m$分割为两个正交的子空间。
 
@@ -59,7 +64,7 @@ $，各式相加得$(c_1row_1+c_2row_2+\cdots+c_nrow_m)^Tx=0$，得证。
 
 而行空间的一组基为$r=\begin{bmatrix}1\\2\\5\end{bmatrix}$，零空间与行空间正交，在本例中行空间也是零空间的法向量。
 
-补充一点，我们把行空间与零空间称为$n$维空间里的正交补（orthogonal complement），即零空间包含了所有与行空间正交的向量；同理列空间与左零空间为$m$维空间里的正交补，即左零空间包含了所有与零空间正交的向量。
+> 补充一点，我们把行空间与零空间称为$n$维空间里的正交补（orthogonal complement），即零空间包含了所有与行空间正交的向量；同理列空间与左零空间为$m$维空间里的正交补，即左零空间包含了所有与零空间正交的向量。
 
 接下来看长方矩阵，$m>n$。对于这种矩阵，$Ax=b$中经常混入一些包含“坏数据”的方程，虽然可以通过筛选的方法去掉一些我们不希望看到的方程，但是这并不是一个稳妥的方法。
 
